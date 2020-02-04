@@ -1,3 +1,4 @@
+// 전역변수
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -20,12 +21,11 @@ canvas.height = CANVAS_SIZE;
 
 /* 기본 선 스타일(색깔), 기본 선 굵기 */
 ctx.strokeStyle = "#2c2c2c";
-ctx.lineWidth = 2.5; 
+ctx.lineWidth = 2.5;
 
 /* 아무때나 그려서는, 채워서는 안되기 때문에 기본값은 False */
 let painting = false;
 let filling = false;
-
 
 /* 그림을 멈춤, 시작 */
 function stopPainting() {
@@ -74,8 +74,9 @@ if (canvas) {
     canvas.addEventListener("click", handleCanvasClick);
 }
 
-Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
-
+Array
+    .from(colors)
+    .forEach(color => color.addEventListener("click", handleColorClick));
 
 /* Target 안의 value 값으로 굵기 지정 */
 /* HTML의 steps로 0.1씩 달라짐 */
@@ -89,18 +90,18 @@ if (range) {
     range.addEventListener("input", handleRangeChange);
 }
 
-/* 만약 그리기/채우기 버튼을 눌렀을 때 채우기 모드가 참일 경우 거짓으로, 텍스트를 채우기로 변경 (반대의 경우도 포함) */ 
+/* 만약 그리기/채우기 버튼을 눌렀을 때 채우기 모드가 참일 경우 거짓으로, 텍스트를 채우기로 변경 (반대의 경우도 포함) */
 function handleModeClick() {
-    if(filling === true) {
+    if (filling === true) {
         filling = false;
         mode.innerText = "Fill"
     } else {
         filling = true;
-        mode.innerText = "Paint"    
+        mode.innerText = "Paint"
     }
 }
 
-/* 그리기, 채우기 모드 버튼 클릭 인식 */ 
+/* 그리기, 채우기 모드 버튼 클릭 인식 */
 if (mode) {
     mode.addEventListener("click", handleModeClick);
 }
