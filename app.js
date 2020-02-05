@@ -13,7 +13,7 @@ const mode = document.getElementById("jsMode");
 
 /* 기본 색, 기본 사이즈 */
 const INITIAL_COLOR = "#2c2c2c";
-const CANVAS_SIZE = 700;
+const CANVAS_SIZE = 600;
 
 /* 캔버스에는 CSS와 직접 보는 화면의 사이즈를 구해야 한다. */
 canvas.width = CANVAS_SIZE;
